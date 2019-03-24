@@ -1,0 +1,190 @@
+body, html
+  height: 100%
+#root
+  .left-bar
+    background-color: white
+    overflow: hidden
+    position: absolute
+    top: 0
+    height: 100%
+    overflow-y: hidden
+    width: 200px
+    z-index: 1
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3) 
+    ul
+      padding-left: 35px
+      margin: 0
+      position: relative
+      list-style: none
+      li
+        position: absolute
+        width: calc(100% - 35px)
+        .ant-checkbox-wrapper
+          position: absolute
+          opacity: 0
+          transitio: opacity .3s
+        &:hover .ant-checkbox-wrapper
+          opacity: 1
+        .equipment-title
+          transition: .3s transform
+          width: 100%
+          display: inline-block
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis
+          transform: translateX(0)
+        &:hover .equipment-title
+          transform: translateX(30px)
+  .kebabs-area
+    position: absolute
+    top: 0
+    height: 100%
+    overflow-y: scroll
+    width: calc(100vw - 200px)
+    left: 200px
+    background-attachment: local
+    background-image: linear-gradient(to bottom, white, white 73%, rgba(0, 0, 0, 0.3) 73%, rgba(0, 0, 0, 0.3) calc(73% + 1px), white calc(73% + 1px))
+    .line-list
+      padding-left: 0
+      margin: 0
+      list-style: none
+      .line-el
+        padding-left: 0
+        position: absolute
+        width: 100%
+        .processing-list
+          padding-left: 0
+          margin: 0
+          list-style: none
+          height: 100%
+          .processing-el
+            padding-left: 0
+            position: absolute
+            width: 100%
+            height: 100%
+            button
+              border-radius: 20px
+              overflow: hidden
+              text-overflow: ellipsis
+            // label
+            //   position: relative
+            //   display: block
+            //   left: 5px
+            //   top: 5px
+            //   width: calc(100% - 10px)
+            //   height: calc(100% - 10px)
+            //   border-radius: 4px
+            //   text-align: center
+            //   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3)
+  .scroll-expander
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    pointer-events: none
+  .ant-page-header
+    .ant-page-header-title-view
+      width: 100%
+      .ant-page-header-title-view-sub-title
+        float: right
+        .top-bar
+          & > *
+            display: inline-block
+            vertical-align: middle
+            &:not(:last-child)
+              margin-right: 30px
+    
+  .cool-scrollbar
+    &::-webkit-scrollbar 
+      width: 10px
+    /* Track */
+    &::-webkit-scrollbar-track 
+      background: #f1f1f1 
+    /* Handle */
+    &::-webkit-scrollbar-thumb 
+      background: #888 
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover 
+      background: #555 
+  .ct-series-a .ct-bar
+    stroke: #37ad04
+    stroke-width: 5px
+  .ct-axis-title
+    stroke: #767676
+    font-weight: 100  
+  .ct-chart-donut .ct-series-a path
+    fill: #37ad04
+  .ct-chart-donut .ct-series-b path
+    fill: #63c33a
+  .pie-chart
+    display: inline-block
+    margin: auto
+    width: 100%
+    position: relative
+    text-align: center
+    max-width: 300px
+    vertical-align: top
+    p
+      font-weight: 600
+      strong
+        font-size: 2em
+  & > .ant-tabs
+    height: calc(100vh - 70px)
+    & > .ant-tabs-bar
+      display: none
+  .scrollable-tab
+    height: calc(100vh - 63px)  
+    overflow-y: auto
+
+@media (max-width: 900px)
+  .ant-page-header
+    .ant-btn > .anticon + span
+      display: none !important
+  .top-bar > *
+    margin-right: 5px !important
+.auth-page
+  padding: 50px 10px
+  max-width: 300px
+  margin: auto
+  input
+    margin-bottom: 20px
+
+@media (max-width: 750px)
+  .left-bar
+    width: 100px !important
+    transition: .3s all
+    ul
+      padding-left: 5px !important
+    &:hover
+      width: 300px !important
+      & + .kebabs-area
+        left: 300px !important
+        width: calc(100vw - 300px) !important
+  .kebabs-area
+    width: calc(100vw - 100px) !important
+    left: 100px !important
+    transition: .3s all
+.dates-list
+  list-style: none
+  padding-left: 0
+  background: white
+  position: absolute
+  top: -6px
+  left: 0
+  li
+    width: 200px
+    position: absolute
+    // top: -11px
+.loader
+  display: block
+  margin: 200px auto
+  text-align: center
+  max-width: 200px
+  width: 100%
+.ct-series-a .ct-line
+  stroke: #37ad04
+  stroke-width: 2px
+.ct-series-a .ct-point
+  stroke: #37ad04
+  stroke-width: 8px
